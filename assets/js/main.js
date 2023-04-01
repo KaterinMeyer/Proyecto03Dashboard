@@ -2,8 +2,7 @@
 //Importar valores UF
 import getValorUF from "./APIUF.js";
 const UFdata = (await getValorUF()).serie
-//Declaración boton UF
-var botonUF = document.getElementById("botonUF")
+
 
 //-----DOLAR
 //Importar valores Dolar
@@ -14,6 +13,32 @@ const DolarData = (await getValorDolar()).serie
 //Importar valores Euro
 import getValorEuro from "./APIEuro.js";
 const EuroData = (await getValorEuro()).serie
+
+//Moneda Hoy
+import getValorHoy from "./APIHoy.js";
+const HoyData = await getValorHoy()
+const IndicadoresHoy = ["uf", "dolar", "euro"]
+
+const ValoresHoy = document.getElementById('monedahoy')
+
+IndicadoresHoy.forEach(indicador => {
+    const valor = HoyData[indicador].valor
+
+    let CLP = new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+        minimumFractionDigits: 2,
+    })
+
+    const valoreshoy = `${indicador}: ${CLP.format(valor)}`
+    const p = document.createElement('p')
+   
+    p.textContent = valoreshoy
+    ValoresHoy.appendChild(p)
+
+})
+
+
 
 //Declaración de Botones
 var botonUF = document.getElementById("botonUF")

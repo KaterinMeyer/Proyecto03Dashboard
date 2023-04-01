@@ -1,0 +1,78 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.mainfont {
+    font-family: Calibri;
+}
+
+header {
+
+    margin: auto;
+    background-color: darkblue;
+    display: flex;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.h_line {
+    border-bottom: 2px solid darkblue;
+    width: auto;
+    margin: auto;
+}
+
+#monedahoy {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 15px;
+    padding: 10px;
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+button {
+    margin: 5px;
+    color: darkblue;
+    background-color: white;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 100px;
+}
+
+
+footer {
+    display: flex;
+    margin-top: 5px;
+}
+
+footer img {
+    width: 20px;
+    height: 20px;
+}
+
+footer ul {
+    padding: 10px 10px 50px 25px;
+    list-style: none;
+}
+
+footer h3 {
+    margin: 0px 80px 30px 0px;
+}

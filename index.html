@@ -6,17 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto03::Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-
+<header class="mainfont">
+    <ul>
     <h1>Indicadores Económicos</h1>
-    <div id="monedahoy"></div>
+    </ul>   
+</header>
+
+<body>
+    <div class="h_line"></div>
+    <div id="monedahoy">
+        <h3>Valor de la moneda hoy:</h3>
+    </div>
+    <div class="h_line"></div>
 
     <button id="botonUF">UF</button>
     <button id="botonDolar">Dolar</button>
     <button id="botonEuro">Euro</button>
-
     <div>
         <canvas id='indicators'></canvas>
     </div>
@@ -27,7 +35,39 @@
 
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="/assets/js/main.js" type="module"></script>
+
+<footer class="mainfont">
+    <div>
+        <ul class="contacto">
+            <li>
+                <h3>Contacto</h3>
+            </li>
+            <img src="assets/images/facebook-logo.png">
+            <img src="assets/images/instagram-logo.png">
+            <img src="assets/images/twitter-logo.png">
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <h3>Servicio al Cliente</h3>
+            </li>
+            <li>Contáctanos</li>
+            <li>Preguntas Frecuentes</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <h3>Legal</h3>
+            </li>
+            <li>Privacidad</li>
+            <li>Términos y Condiciones</li>
+        </ul>
+    </div>
+</footer>
 
 </html>
