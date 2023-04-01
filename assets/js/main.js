@@ -3,7 +3,6 @@
 import getValorUF from "./APIUF.js";
 const UFdata = (await getValorUF()).serie
 
-
 //-----DOLAR
 //Importar valores Dolar
 import getValorDolar from "./APIDolar.js";
@@ -32,13 +31,9 @@ IndicadoresHoy.forEach(indicador => {
 
     const valoreshoy = `${indicador}: ${CLP.format(valor)}`
     const p = document.createElement('p')
-   
     p.textContent = valoreshoy
     ValoresHoy.appendChild(p)
-
 })
-
-
 
 //Declaración de Botones
 var botonUF = document.getElementById("botonUF")
@@ -48,12 +43,12 @@ var botonEuro = document.getElementById("botonEuro")
 //GRÁFICO UF
 botonUF.addEventListener("click", function (event) {
 
-    let chartStatus = Chart.getChart("indicators");
+    let chartStatus = Chart.getChart("indicadores");
     if (chartStatus != undefined) {
         chartStatus.destroy();
     }
 
-    const indicatorsCanvasNode = document.getElementById('indicators')
+    const indicatorsCanvasNode = document.getElementById('indicadores')
     const labels = UFdata.map(uf => new Date(uf.fecha).toLocaleDateString()).reverse()
     const data = {
         labels: labels,
@@ -62,7 +57,8 @@ botonUF.addEventListener("click", function (event) {
             data: UFdata.map(uf => uf.valor).reverse(),
             fill: false,
             borderColor: 'rgb(255, 0, 0)',
-            tension: 0.1
+            tension: 0.1,
+
         }]
     };
 
@@ -86,12 +82,12 @@ botonUF.addEventListener("click", function (event) {
 //GRÁFICO DOLAR
 botonDolar.addEventListener("click", function (event) {
 
-    let chartStatus = Chart.getChart("indicators");
+    let chartStatus = Chart.getChart("indicadores");
     if (chartStatus != undefined) {
         chartStatus.destroy();
     }
 
-    const indicatorsCanvasNode = document.getElementById('indicators')
+    const indicatorsCanvasNode = document.getElementById('indicadores')
     const labels = DolarData.map(dolar => new Date(dolar.fecha).toLocaleDateString()).reverse()
     const data = {
         labels: labels,
@@ -122,12 +118,12 @@ botonDolar.addEventListener("click", function (event) {
 //GRÁFICO EURO
 botonEuro.addEventListener("click", function (event) {
 
-    let chartStatus = Chart.getChart("indicators");
+    let chartStatus = Chart.getChart("indicadores");
     if (chartStatus != undefined) {
         chartStatus.destroy();
     }
 
-    const indicatorsCanvasNode = document.getElementById('indicators')
+    const indicatorsCanvasNode = document.getElementById('indicadores')
     const labels = EuroData.map(euro => new Date(euro.fecha).toLocaleDateString()).reverse()
     const data = {
         labels: labels,
@@ -154,3 +150,4 @@ botonEuro.addEventListener("click", function (event) {
 
     const graph = new Chart(indicatorsCanvasNode, config)
 });
+
