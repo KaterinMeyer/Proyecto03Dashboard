@@ -1,20 +1,20 @@
 //-----UF
 //Importar valores UF
-import getValorUF from "./APIUF.js";
+import getValorUF from "/assets/js/APIUF.js";
 const UFdata = (await getValorUF()).serie
 
 //-----DOLAR
 //Importar valores Dolar
-import getValorDolar from "./APIDolar.js";
+import getValorDolar from "/assets/js/APIDolar.js";
 const DolarData = (await getValorDolar()).serie
 
 //-----EURO
 //Importar valores Euro
-import getValorEuro from "./APIEuro.js";
+import getValorEuro from "/assets/js/APIEuro.js";
 const EuroData = (await getValorEuro()).serie
 
 //Moneda Hoy
-import getValorHoy from "./APIHoy.js";
+import getValorHoy from "/assets/js/APIHoy.js";
 const HoyData = await getValorHoy()
 const IndicadoresHoy = ["uf", "dolar", "euro"]
 
