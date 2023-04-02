@@ -58,7 +58,6 @@ botonUF.addEventListener("click", function (event) {
             fill: false,
             borderColor: 'rgb(255, 0, 0)',
             tension: 0.1,
-
         }]
     };
 
